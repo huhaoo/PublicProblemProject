@@ -3,8 +3,8 @@ import time
 import datetime
 
 def AGC_Run(name, contest):
-    # today = str(datetime.date.today())
-    today = "2020-11-15"
+    today = str(datetime.date.today())
+    # today = "2020-11-15"
     file = open("output.html", mode='r')
     flag = 0 
     s = ""
