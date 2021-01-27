@@ -3,8 +3,8 @@ import time
 import datetime
 
 def AGC_Run(name, contest):
-    today = str(datetime.date.today())
-    # today = "2020-11-15"
+    #  today = str(datetime.date.today())
+    today = "2020-11-28"
     file = open("output.html", mode='r')
     flag = 0 
     s = ""
@@ -37,7 +37,7 @@ def AGC_Get(name,contest):
     print()
     time.sleep(10)
 
-user_list=["pengzhike","skydogli","ljfcnyali","huhaoo"]
+user_list=["huhaoo","pengzhike","skydogli","ljfcnyali",]
 id_list=["agc001","agc002"]
 for i in user_list:
     for j in id_list:
