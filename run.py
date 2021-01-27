@@ -1,6 +1,7 @@
 import requests
 import time
 
+# Atcoder submissions
 def run(name,_id):
     #print(name,_id)
     url = f'https://atcoder.jp/contests/'+_id+'/submissions?f.Task=&f.LanguageName=&f.Status=AC&f.User='+name
@@ -8,10 +9,12 @@ def run(name,_id):
     r = requests.get(url, timeout = 5)
     #print(r)
     r.encoding = 'utf-8'
-    file=open("a.html", mode='w')
+    file=open("output.html", mode='w')
     file.write(r.text)
+    print("Done " + name + " " + _id);
     time.sleep(10)
-user_list=["pengzhike","skydogli","ljfcnyali"]
+
+user_list=["pengzhike","skydogli","ljfcnyali","huhaoo"]
 id_list=["agc001","agc002"]
 for i in user_list:
     for j in id_list:
