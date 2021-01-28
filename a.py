@@ -33,7 +33,7 @@ def mail(s):
 ################################   Send mail part   ######################################
 
 
-
+allinfo=""
 _file=open("a.out",mode='w')
 def AGC_Run(name, contest):
     file = open("a.html", mode='r')
@@ -49,7 +49,9 @@ def AGC_Run(name, contest):
             info=s +" "+ name+" Accepted " + line[pos : pos + 8]
             print(info)
             _file.write(info)
-            smtp.sendmail(mailfrom,mailto, info) 
+            global allinfo
+            allinfo=allinfo+info+'\n'
+            #mail(info)
             continue 
         pos = line.find(_time)
         if pos == -1: 
@@ -63,19 +65,21 @@ def AGC_Run(name, contest):
 # Atcoder submissions
 def AGC_Get(name,contest):
     url = f'https://atcoder.jp/contests/'+contest+'/submissions?f.Task=&f.LanguageName=&f.Status=AC&f.User='+name
-    r = requests.get(url, timeout = 5)
+    r = requests.get(url, timeout = 1000)
     r.encoding = 'utf-8'
     file=open("a.html", mode='w')
     file.write(r.text)
     AGC_Run(name,contest)
     #print()
-    time.sleep(10)
+    time.sleep(5)
 id_list=[]#["agc001","agc002"]
 for i in range(1,10):
     id_list.append("agc00"+str(i))
 for i in range(10,53):
     id_list.append("agc0"+str(i))
+#id_list=["agc015"]
 for i in user_list:
     for j in id_list:
         AGC_Get(i,j) 
+mail(allinfo)
 smtp.quit()
