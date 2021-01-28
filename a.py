@@ -32,7 +32,7 @@ def mail(s):
 #mail("skydogliqiutietie")
 ################################   Send mail part   ######################################
 
-
+"""
 allinfo=""
 _file=open("a.out",mode='w')
 def AGC_Run(name, contest):
@@ -83,3 +83,18 @@ for i in user_list:
         AGC_Get(i,j) 
 mail(allinfo)
 smtp.quit()
+"""
+
+def Run(s):
+    pass
+
+def Get(name):
+    url = f'https://kenkoooo.com/atcoder/atcoder-api/results?user='+name
+    r = requests.get(url, timeout = 1000)
+    r.encoding = 'utf-8'
+    Run(r.text)
+    time.sleep(5)
+
+for i in user_list:
+    Get(i)
+    break
