@@ -5,4 +5,4 @@
 - [ ] ljfcnyali 模块化
 - [ ] skydogli 卷榜
 - [ ] Crazyali 支持codeforces (c.py/c.out)
-- [ ] Thaumaturge32 支持loj (l.py/l.out)
+- [ ] pengzhike 支持loj (l.py/l.out)
