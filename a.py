@@ -38,6 +38,7 @@ def mail(s):
 #mail("skydogliqiutietie")
 ################################   Send mail part   ######################################
 
+################################   Unique part   ######################################
 def ins(s):
     f=open("a.out","r")
     a=f.read().split()
@@ -49,6 +50,7 @@ def ins(s):
     for i in a:
         print(i,end=' ',file=f)
     return 1
+################################   Unique part   ######################################
 
 Info=""
 def Run(s, name):
