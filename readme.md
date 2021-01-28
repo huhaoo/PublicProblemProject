@@ -4,5 +4,5 @@
 - [x] 去重
 - [ ] ljfcnyali 优化代码
 - [ ] skydogli 卷榜
-- [ ] Crazyali 支持codeforces
-- [ ] Thaumaturge32 支持loj
+- [ ] Crazyali 支持codeforces (c.py/c.out)
+- [ ] Thaumaturge32 支持loj (l.py/l.out)
