@@ -63,7 +63,7 @@ def Run(s, name):
         t = s[:pos]
         y = t.rfind("epoch_second")
         x = time.gmtime((int)(re.search("\d+", s[y:]).group()) + 28800)
-        if x[0] == _time[0] and x[1] == _time[1] and x[2] == _time[2] :
+        if True : #x[0] == _time[0] and x[1] == _time[1] and x[2] == _time[2] :
             Id=re.search("[a-z]+[0-9]+_[a-z]?", s[s.find("problem_id", y):]).group()
             if not ins(Id+'_'+name):
                 continue
