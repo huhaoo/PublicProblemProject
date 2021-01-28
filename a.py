@@ -1,56 +1,16 @@
 import requests
 import time
 import datetime
-import smtplib
 import re
-from email.mime.text import MIMEText
 from datetime import datetime
 from datetime import timezone
 from datetime import timedelta
+from mail import mail
+from ins import ins
 
 user_list=["pengzhike","skydogli","ljfcnyali","khronos","crazyali "]
 _time = time.localtime(time.time())
 #  _time = [2021,1,27]
-receivers=["ljfcnyali@gmail.com","yms-chenziyang@outlook.com","2264454706@qq.com","1799237435@qq.com","1820839252@qq.com","3419944268@qq.com"]
-password="LGAGMGHTETRLUCRQ"
-
-################################   Send mail part   ######################################
-def mail(s):
-    if len(s)<2:
-        return
-    smtp = smtplib.SMTP() 
-    smtp.connect('smtp.163.com') 
-    sender="czyakioi@163.com"
-    smtp.login(sender,password)
-    print("Mail-login successfully.")
-    for i in receivers:
-        message = MIMEText(s, 'plain', 'utf-8')
-        message['From'] = sender
-        message['To'] = i
-        send_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
-        subject = send_time
-        message['Subject'] = subject
-        try:
-            smtp.sendmail(sender, i, message.as_string())
-        except smtplib.SMTPException:
-            pass
-    smtp.quit()
-#mail("skydogliqiutietie")
-################################   Send mail part   ######################################
-
-################################   Unique part   ######################################
-def ins(s):
-    f=open("a.out","r")
-    a=f.read().split()
-    if s in a:
-        return 0
-    a.append(s)
-    f.close()
-    f=open("a.out","w")
-    for i in a:
-        print(i,end=' ',file=f)
-    return 1
-################################   Unique part   ######################################
 
 Info=""
 def Run(s, name):
