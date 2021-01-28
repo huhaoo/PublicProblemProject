@@ -93,8 +93,7 @@ def Get(name):
     r = requests.get(url, timeout = 1000)
     r.encoding = 'utf-8'
     Run(r.text)
-    time.sleep(5)
+    time.sleep(1)
 
 for i in user_list:
     Get(i)
-    break
