@@ -8,7 +8,7 @@ from datetime import datetime
 from datetime import timezone
 from datetime import timedelta
 
-user_list=["pengzhike","skydogli","ljfcnyali","khronos"]
+user_list=["pengzhike","skydogli","ljfcnyali","khronos","huhaoo"]
 _time = time.localtime(time.time())
 #  _time = [2020,12,22]
 
@@ -35,59 +35,6 @@ def mail(s):
         #print("sended")
 #mail("skydogliqiutietie")
 ################################   Send mail part   ######################################
-
-"""
-allinfo=""
-_file=open("a.out",mode='w')
-def AGC_Run(name, contest):
-    file = open("a.html", mode='r')
-    flag = 0 
-    s = ""
-    #print("Let's checking " + name + " submissions on " + contest)
-    #print()
-    for line in file:
-        if flag == 1:
-            flag = 0 
-            pos = line.find(contest + "_")
-            s = s[:11] + str(int(s[11 : 13]) - 1) + s[13:]
-            info=s +" "+ name+" Accepted " + line[pos : pos + 8]
-            print(info)
-            _file.write(info)
-            global allinfo
-            allinfo=allinfo+info+'\n'
-            #mail(info)
-            continue 
-        pos = line.find(_time)
-        if pos == -1: 
-            flag = 0 
-            continue 
-        flag = 1 
-        s = line[pos : pos + 19]
-    #print() 
-    #print("Done checking " + name + " submissions on " + contest)
-
-# Atcoder submissions
-def AGC_Get(name,contest):
-    url = f'https://atcoder.jp/contests/'+contest+'/submissions?f.Task=&f.LanguageName=&f.Status=AC&f.User='+name
-    r = requests.get(url, timeout = 1000)
-    r.encoding = 'utf-8'
-    file=open("a.html", mode='w')
-    file.write(r.text)
-    AGC_Run(name,contest)
-    #print()
-    time.sleep(8)
-id_list=[]#["agc001","agc002"]
-for i in range(1,10):
-    id_list.append("agc00"+str(i))
-for i in range(10,53):
-    id_list.append("agc0"+str(i))
-#id_list=["agc015"]
-for i in user_list:
-    for j in id_list:
-        AGC_Get(i,j) 
-mail(allinfo)
-smtp.quit()
-"""
 
 def Run(s, name):
     lstpos = 0
