@@ -1,4 +1,4 @@
-s=open("a.out","r")
+s=open("ins.out","r")
 a=s.read().split()
 fk = []
 # print(a)
