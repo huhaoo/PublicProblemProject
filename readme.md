@@ -3,7 +3,7 @@
 - [x] 支持atcoder
 - [x] 去重
 - [x] 模块化
-- [x] skydogli 卷榜
+- [ ] skydogli 卷榜
 - [ ] CraZYali 支持codeforces (c.py/c.out)
 - [ ] pengzhike 支持loj (l.py/l.out)
 
