@@ -11,7 +11,7 @@
 
 注意将`__pycache__/`加入`.gitignore`中。
 
-#### Mail
+### Mail
 
 ```python
 from mail import mail
@@ -19,7 +19,7 @@ from mail import mail
 
 可调用`mail(s)`发送字符串`s`至邮箱
 
-#### Insert
+### Insert
 
 ```python
 from ins import ins
@@ -29,7 +29,7 @@ from ins import ins
 
 `ins.out`使用格式：题号+`_`+人名，每次空一格
 
-#### a.py/c.py/l.py
+### a.py/c.py/l.py
 
 ```python
 import a
@@ -44,6 +44,6 @@ import l
 2xxx-xx-xx xx:xx:xx name Accepted problem_id
 ```
 
-#### run.py
+### run.py
 
 自动调用各OJ文件，并整合后统一发送
