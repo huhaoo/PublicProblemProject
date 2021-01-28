@@ -9,13 +9,15 @@ from datetime import timezone
 from datetime import timedelta
 
 user_list=["pengzhike","skydogli","ljfcnyali","khronos","crazyali "]
-_time = time.localtime(time.time())
+#_time = time.localtime(time.time())
+_time = [2021,1,27]
 receivers=["ljfcnyali@gmail.com","yms-chenziyang@outlook.com","2264454706@qq.com","1799237435@qq.com","1820839252@qq.com","3419944268@qq.com"]
 password="LGAGMGHTETRLUCRQ"
-#  _time = [2020,12,22]
 
 ################################   Send mail part   ######################################
 def mail(s):
+    if len(s)<2:
+        return
     smtp = smtplib.SMTP() 
     smtp.connect('smtp.163.com') 
     sender="czyakioi@163.com"
