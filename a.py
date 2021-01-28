@@ -8,19 +8,19 @@ from datetime import datetime
 from datetime import timezone
 from datetime import timedelta
 
-user_list=["pengzhike","skydogli","ljfcnyali","khronos"]
+user_list=["pengzhike","skydogli","ljfcnyali","khronos","crazyali "]
 _time = time.localtime(time.time())
+receivers=["ljfcnyali@gmail.com","yms-chenziyang@outlook.com","2264454706@qq.com","1799237435@qq.com","1820839252@qq.com","3419944268@qq.com"]
+password="LGAGMGHTETRLUCRQ"
 #  _time = [2020,12,22]
 
 ################################   Send mail part   ######################################
-smtp = smtplib.SMTP() 
-smtp.connect('smtp.163.com') 
-sender="czyakioi@163.com"
-receivers=["ljfcnyali@gmail.com","yms-chenziyang@outlook.com","2264454706@qq.com","1799237435@qq.com","1820839252@qq.com"]
-password="LGAGMGHTETRLUCRQ"
-smtp.login(sender,password)
-print("Mail-login successfully.")
 def mail(s):
+    smtp = smtplib.SMTP() 
+    smtp.connect('smtp.163.com') 
+    sender="czyakioi@163.com"
+    smtp.login(sender,password)
+    print("Mail-login successfully.")
     for i in receivers:
         message = MIMEText(s, 'plain', 'utf-8')
         message['From'] = sender
@@ -32,9 +32,25 @@ def mail(s):
             smtp.sendmail(sender, i, message.as_string())
         except smtplib.SMTPException:
             pass
-        #print("sended")
+    smtp.quit()
 #mail("skydogliqiutietie")
 ################################   Send mail part   ######################################
+
+################################   Unique part      ######################################
+def ins(s):
+    f=open("a.out","r")
+    a=f.read().split()
+    if s in a:
+        return 0
+    a.append(s)
+    f.close()
+    f=open("a.out","w")
+    for i in a:
+        print(i,end=' ',file=f)
+    return 1
+
+################################   Unique part      ######################################
+
 
 """
 allinfo=""
@@ -89,6 +105,7 @@ mail(allinfo)
 smtp.quit()
 """
 
+Info=""
 def Run(s, name):
     lstpos = 0
     while True :
@@ -100,9 +117,13 @@ def Run(s, name):
         y = t.rfind("epoch_second")
         x = time.gmtime((int)(re.search("\d+", s[y:]).group()) + 28800)
         if x[0] == _time[0] and x[1] == _time[1] and x[2] == _time[2] :
-            print(time.strftime("%Y-%m-%d %H:%M:%S", x), end=' ')
-            print(name+" Accepted "+re.search("[a-z]+[0-9]+_[a-z]?", s[s.find("problem_id", y):]).group())
-            
+            Id=re.search("[a-z]+[0-9]+_[a-z]?", s[s.find("problem_id", y):]).group()
+            if not ins(Id+'_'+name):
+                continue
+            info=time.strftime("%Y-%m-%d %H:%M:%S", x)+' '+name+" Accepted "+Id
+            print(info)
+            global Info
+            Info+=info+'\n'
 
 def Get(name):
     url = f'https://kenkoooo.com/atcoder/atcoder-api/results?user='+name
@@ -113,3 +134,5 @@ def Get(name):
 
 for i in user_list:
     Get(i)
+
+mail(Info)
