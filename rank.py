@@ -9,8 +9,9 @@ for i in a:
 	fk.append(st)
 fk.sort()
 vis=[]
-print("历史总榜：")
+f=open("rank.out","w")
+print("历史总榜：",file=f)
 for i in fk:
 	if vis.count(i)==0 :
-		print(i,": ",fk.count(i))
+		print(i,": ",fk.count(i),file=f)
 	vis.append(i)
