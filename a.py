@@ -71,7 +71,7 @@ def AGC_Get(name,contest):
     file.write(r.text)
     AGC_Run(name,contest)
     #print()
-    time.sleep(5)
+    time.sleep(8)
 id_list=[]#["agc001","agc002"]
 for i in range(1,10):
     id_list.append("agc00"+str(i))
