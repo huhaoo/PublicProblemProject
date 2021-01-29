@@ -34,5 +34,5 @@ def Get(name):
     url = f'https://kenkoooo.com/atcoder/atcoder-api/results?user='+name
     r = requests.get(url, timeout = 1000)
     r.encoding = 'utf-8'
-    time.sleep(1)
+    #  time.sleep(1)
     return Run(r.text, name)
