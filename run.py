@@ -5,7 +5,7 @@ user_list=["pengzhike","skydogli","ljfcnyali","khronos","CraZYali","huhaoo"]
 
 s = ""
 for i in user_list:
-    #print(i)
+    print(i)
     s = s + a.Get(i)
 
 if len(s) > 0:
