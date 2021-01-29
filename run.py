@@ -8,4 +8,5 @@ for i in user_list:
     print(i)
     s = s + a.Get(i)
 
-mail(s)
+if len(s) > 0:
+    mail(s)
