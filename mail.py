@@ -7,7 +7,7 @@ def mail(s):
     smtp = smtplib.SMTP() 
     smtp.connect('smtp.163.com') 
     sender="czyakioi@163.com"
-    receivers=["ljfcnyali@gmail.com","yms-chenziyang@outlook.com","2264454706@qq.com","1799237435@qq.com","1820839252@qq.com","3419944268@qq.com"]
+    receivers=["ljfcnyali@gmail.com","yms-chenziyang@outlook.com","2264454706@qq.com","1799237435@qq.com","1820839252@qq.com","3419944268@qq.com","hh826538400@gmail.com"]
     password="LGAGMGHTETRLUCRQ"
     smtp.login(sender,password)
     print("Mail-login successfully.")
