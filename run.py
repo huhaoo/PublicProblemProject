@@ -1,7 +1,7 @@
 import a
 from mail import mail
 
-user_list=["pengzhike","skydogli","ljfcnyali","khronos","crazyali"]
+user_list=["pengzhike","skydogli","ljfcnyali","khronos","CraZYali"]
 
 s = ""
 for i in user_list:

@@ -11,6 +11,8 @@ _time = time.localtime(time.time())
 def Run(s, name):
     Info=""
     lstpos = 0
+    file = open("1.out", mode="w")
+    print(s, file = file)
     while True :
         pos = s.find("AC", lstpos)
         if pos == -1:
@@ -20,7 +22,7 @@ def Run(s, name):
         y = t.rfind("epoch_second")
         x = time.gmtime((int)(re.search("\d+", s[y:]).group()) + 28800)
         if True : #x[0] == _time[0] and x[1] == _time[1] and x[2] == _time[2] :
-            Id=re.search("[a-z]+[0-9]+_[a-z]?", s[s.find("problem_id", y):]).group()
+            Id=re.search("[a-z]+[0-9]+_[a-z]?[0-9]?", s[s.find("problem_id", y):]).group()
             if not ins(Id+'_'+name):
                 continue
             info=time.strftime("%Y-%m-%d %H:%M:%S", x)+' '+name+" Accepted "+Id
