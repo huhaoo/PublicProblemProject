@@ -11,8 +11,8 @@ _time = time.localtime(time.time())
 def Run(s, name):
     Info=""
     lstpos = 0
-    file = open("1.out", mode="w")
-    print(s, file = file)
+    #file = open("1.out", mode="w")
+    #print(s, file = file)
     while True :
         pos = s.find("AC", lstpos)
         if pos == -1:

@@ -40,4 +40,4 @@ def mail(s):
         except:
             pass
     smtp.quit()
-mail("test")
+#mail("test")
