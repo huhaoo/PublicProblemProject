@@ -4,7 +4,7 @@
 - [x] 去重
 - [x] 模块化
 - [ ] skydogli 卷榜
-- [ ] CraZYali 支持codeforces (c.py/c.out)
+- [x] 支持codeforces
 - [ ] pengzhike 支持loj (l.py/l.out)
 
 ## 文件调用指令
