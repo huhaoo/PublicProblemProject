@@ -5,12 +5,29 @@ def mail(s):
     if len(s)<2:
         return
     smtp = smtplib.SMTP() 
-    smtp.connect('smtp.163.com') 
-    sender="czyakioi@163.com"
-    receivers=["ljfcnyali@gmail.com","yms-chenziyang@outlook.com","2264454706@qq.com","1799237435@qq.com","1820839252@qq.com","3419944268@qq.com","hh826538400@gmail.com"]
-    password="LGAGMGHTETRLUCRQ"
-    smtp.login(sender,password)
-    print("Mail-login successfully.")
+    smtp.connect('smtp.163.com')
+    sender=""
+    password=""
+    try:
+        f=open("password","r")
+    except:
+        print("Please input your mail's address & password.")
+        sender=input()
+        password=input()
+        F=open("password","w")
+        print(sender,file=F)
+        print(password,file=F)
+    else:
+        sender,password=f.read().split()
+    try:
+        smtp.login(sender,password)
+    except:
+        print(sender,'/',password)
+        print("Login failed.")
+        return
+    else:
+        print("Login successfully!")
+    receivers=["ljfcnyali@gmail.com","yms-chenziyang@outlook.com","2264454706@qq.com","1799237435@qq.com","1820839252@qq.com","3419944268@qq.com","qq826538400@gmail.com"]
     for i in receivers:
         message = MIMEText(s, 'plain', 'utf-8')
         message['From'] = sender
@@ -20,6 +37,7 @@ def mail(s):
         message['Subject'] = subject
         try:
             smtp.sendmail(sender, i, message.as_string())
-        except smtplib.SMTPException:
+        except:
             pass
     smtp.quit()
+mail("test")
