@@ -2,14 +2,10 @@ import a
 import c
 from mail import mail
 
-
 s = ""
-
 for i in ["pengzhike","skydogli","ljfcnyali","khronos","CraZYali","huhaoo"]:
-    #print(i)
     s = s + a.Get(i)
 for i in ["ljf007","pengzhike","skydogli","Another_CraZYali","the_out_land"]:
     s = s + c.Get(i)
 
-if len(s) > 0:
-    mail(s)
+mail(s)
