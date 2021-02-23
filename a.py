@@ -23,7 +23,7 @@ def Run(s, name):
         x = time.gmtime((int)(re.search("\d+", s[y:]).group()) + 28800)
         if True : #x[0] == _time[0] and x[1] == _time[1] and x[2] == _time[2] :
             Id=re.search("[a-z]+[0-9]+_[a-z]?[0-9]?", s[s.find("problem_id", y):]).group()
-            if not ins(Id+'_'+name):
+            if not ins('A'+Id+'_'+name):
                 continue
             info=time.strftime("%Y-%m-%d %H:%M:%S", x)+' '+name+" Accepted "+Id
             print(info)

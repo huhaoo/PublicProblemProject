@@ -29,8 +29,8 @@ def Run(s, name):
             try:
                 a=re.search("[0-9]+", s[s.find("contestId", pos):]).group()
                 b=re.search("[A-Z]", s[s.find("index", pos):]).group()
-                Id="CF"+str(a)+str(b)
-                if not ins(Id+'_'+name):
+                Id="CF"+str(a)+'_'+str(b)
+                if not ins('C'+Id+'_'+name):
                     continue
                 info=time.strftime("%Y-%m-%d %H:%M:%S", x)+' '+name+" Accepted "+Id
                 print(info)
