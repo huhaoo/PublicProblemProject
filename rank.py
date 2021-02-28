@@ -1,4 +1,4 @@
-# TODO : ranking list ; ranking list since last run ; codeforces (weights by difficultly) .
+# TODO : ranking list ; ranking list since last run ; codeforces (weighted by difficultly) .
 # weight = exp((difflculty-2000)/200)
 
 # all accepted : ins.out
