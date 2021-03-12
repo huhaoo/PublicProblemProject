@@ -42,9 +42,12 @@ def Run(s, name):
     return Info
 
 def Get(name):
-    url = f'https://codeforces.com/api/user.status?from=1&count=1000000&handle='+name
-    r = requests.get(url, timeout = 1000)
-    r.encoding = 'utf-8'
-    #  time.sleep(1)
-    return Run(r.text, name)
+    info=""
+    for i in range(0,1):
+        url = f'https://codeforces.com/api/user.status?from='+str(i*10000+1)+'&count=10000&handle='+name
+        r = requests.get(url, timeout = 1000)
+        r.encoding = 'utf-8'
+        time.sleep(0.1)
+        info+=Run(r.text, name)
+    return info;
 #Get("huhaoo")
