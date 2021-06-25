@@ -19,13 +19,14 @@ def mail(s):
         print(sender,file=F)
         print(password,file=F)
     else:
-        sender,password=f.read().split()
+        sender,password,add=f.read().split()
     try:
         smtp.connect(add)
         smtp.login(sender,password)
     except:
-        print(sender,'/',password)
-        print("Login failed.")
+        print(sender,'/',password,'/',add)
+        print("Login failed. info:")
+        smtp.login(sender,password)
         return
     else:
         print("Login successfully!")
