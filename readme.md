@@ -5,11 +5,13 @@
 - [x] 模块化
 - [ ] skydogli 卷榜
 - [x] 支持codeforces
-- [ ] pengzhike 支持loj (l.py/l.out)
+- [ ] pengzhike 支持loj (l.py/l.out) （实现难度极大）
 
 ## 文件调用指令
 
 注意将`__pycache__/`加入`.gitignore`中。
+
+`ins.out`文件过大，建议加入`.gitignore`。（假的，不大）
 
 ### Mail
 
